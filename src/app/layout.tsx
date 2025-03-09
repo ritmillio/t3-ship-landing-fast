@@ -36,6 +36,11 @@ export const metadata: Metadata = {
       alt: APP_NAME,
     },
   },
+  manifest: `${env.NEXT_PUBLIC_APP_URL}/manifest`,
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 /** Viewport */
