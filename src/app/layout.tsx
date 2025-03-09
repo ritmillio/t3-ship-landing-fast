@@ -1,7 +1,6 @@
 import "@/app/globals.css";
 import { type Viewport, type Metadata } from "next";
 import { env } from "@/env";
-import { APP_NAME, APP_DESCRIPTION } from "@/lib/app";
 
 /** Fonts
  *    Google or Local Fonts load
@@ -25,15 +24,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: APP_NAME,
-    title: APP_NAME,
-    description: APP_DESCRIPTION,
+    siteName: env.NEXT_PUBLIC_APP_NAME,
+    title: env.NEXT_PUBLIC_APP_NAME,
+    description: env.NEXT_PUBLIC_APP_DESCRIPTION,
     url: env.NEXT_PUBLIC_APP_URL,
     images: {
       url: `${env.NEXT_PUBLIC_APP_URL}/og-image`,
       width: 1200,
       height: 630,
-      alt: APP_NAME,
+      alt: env.NEXT_PUBLIC_APP_NAME,
     },
   },
   manifest: `${env.NEXT_PUBLIC_APP_URL}/manifest`,
