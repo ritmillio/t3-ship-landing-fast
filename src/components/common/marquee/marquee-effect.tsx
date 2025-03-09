@@ -37,6 +37,7 @@ function MarqueeAnimation({
     clamp: false,
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
 
   const directionFactor = useRef<number>(1);
@@ -55,11 +56,11 @@ function MarqueeAnimation({
   });
 
   return (
-    <div className="overflow-hidden max-w-[100vw] text-nowrap flex-nowrap flex relative">
+    <div className="relative flex max-w-[100vw] flex-nowrap overflow-hidden text-nowrap">
       <motion.div
         className={cn(
-          "font-bold uppercase text-5xl flex flex-nowrap text-nowrap *:block *:me-10",
-          className
+          "flex flex-nowrap text-nowrap text-5xl font-bold uppercase *:me-10 *:block",
+          className,
         )}
         style={{ x }}
       >
